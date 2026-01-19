@@ -1,0 +1,17 @@
+# Simple text-based plymouth script
+# Replace with graphical assets later
+
+Window.SetBackgroundTopColor(0.1, 0.1, 0.1);
+Window.SetBackgroundBottomColor(0.05, 0.05, 0.05);
+
+message_sprite = Sprite();
+message_sprite.SetPosition(Window.GetWidth() / 2, Window.GetHeight() / 2, 1);
+
+fun message_callback(text) {
+    my_image = Image.Text(text, 1, 1, 1, "Sans 16");
+    message_sprite.SetImage(my_image);
+    message_sprite.SetX(Window.GetWidth() / 2 - my_image.GetWidth() / 2);
+    message_sprite.SetY(Window.GetHeight() / 2 - my_image.GetHeight() / 2);
+}
+
+Plymouth.SetMessageFunction(message_callback);

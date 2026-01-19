@@ -1,0 +1,21 @@
+#!/bin/sh
+# Runs inside the chroot during build
+
+set -e
+
+# Set plymouth theme
+if [ -x /usr/sbin/plymouth-set-default-theme ]; then
+    plymouth-set-default-theme jalos || true
+fi
+
+# Enable NetworkManager
+if [ -x /usr/bin/systemctl ]; then
+    systemctl enable NetworkManager || true
+fi
+
+# Create jalos user for live session (optional, live-build handles 'user' by default)
+# Uncomment if you want a custom username
+# useradd -m -G sudo,cdrom,audio,video,plugdev -s /bin/bash jalos
+# echo "jalos:jalos" | chpasswd
+
+echo "jalos setup hook completed"

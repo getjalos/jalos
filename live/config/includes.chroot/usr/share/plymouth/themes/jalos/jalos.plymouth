@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=jalos
+Description=jalos boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/jalos
+ScriptFile=/usr/share/plymouth/themes/jalos/jalos.script
