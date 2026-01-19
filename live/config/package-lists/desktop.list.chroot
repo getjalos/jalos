@@ -1,0 +1,22 @@
+# XFCE Desktop Environment
+task-xfce-desktop
+xfce4-goodies
+xfce4-terminal
+xfce4-whiskermenu-plugin
+thunar-archive-plugin
+thunar-volman
+
+# Display manager
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+# Audio
+pipewire
+pipewire-pulse
+wireplumber
+pavucontrol
+
+# Networking
+network-manager
+network-manager-gnome

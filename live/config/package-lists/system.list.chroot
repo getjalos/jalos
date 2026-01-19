@@ -1,0 +1,31 @@
+# Firmware
+firmware-linux
+firmware-linux-nonfree
+firmware-misc-nonfree
+firmware-realtek
+firmware-iwlwifi
+firmware-atheros
+
+# System utilities
+htop
+btop
+neofetch
+bash-completion
+sudo
+curl
+wget
+git
+vim
+nano
+
+# Boot & theming
+plymouth
+plymouth-themes
+
+# Printing
+cups
+system-config-printer
+
+# Bluetooth
+bluez
+blueman

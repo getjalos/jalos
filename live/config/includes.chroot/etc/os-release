@@ -1,0 +1,10 @@
+PRETTY_NAME="jalos 1.0"
+NAME="jalos"
+VERSION_ID="1.0"
+VERSION="1.0 (Based on Debian Trixie)"
+VERSION_CODENAME=trixie
+ID=jalos
+ID_LIKE=debian
+HOME_URL="https://jalos.example.com"
+SUPPORT_URL="https://jalos.example.com/support"
+BUG_REPORT_URL="https://jalos.example.com/bugs"

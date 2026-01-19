@@ -1,0 +1,25 @@
+# Build artifacts
+live/*.iso
+live/*.contents
+live/*.files
+live/*.hybrid.iso
+live/*.hybrid.iso.zsync
+live/*.packages
+live/*.zsync
+live/chroot/
+live/binary/
+live/.build/
+live/cache/
+live/config/binary
+live/config/bootstrap
+live/config/chroot
+live/config/common
+live/config/source
+*.log
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
