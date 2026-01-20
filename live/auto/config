@@ -14,6 +14,6 @@ lb config noauto \
     --iso-application "jalos ${VERSION}" \
     --iso-publisher "jalos Project" \
     --iso-volume "jalos-${VERSION}" \
-    --bootloaders "grub-efi" \
+    --bootloaders "grub-efi,syslinux" \
     --image-name "jalos-${VERSION}" \
     "${@}"

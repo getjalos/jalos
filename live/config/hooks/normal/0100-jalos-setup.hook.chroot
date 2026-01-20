@@ -13,9 +13,11 @@ if [ -x /usr/bin/systemctl ]; then
     systemctl enable NetworkManager || true
 fi
 
-# Create jalos user for live session (optional, live-build handles 'user' by default)
-# Uncomment if you want a custom username
-# useradd -m -G sudo,cdrom,audio,video,plugdev -s /bin/bash jalos
-# echo "jalos:jalos" | chpasswd
+# Create live user with password
+useradd -m -G sudo,audio,cdrom,video,plugdev,users -s /bin/bash user || true
+echo "user:live" | chpasswd
+
+# Allow passwordless sudo
+echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user
 
 echo "jalos setup hook completed"
