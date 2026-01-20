@@ -9,3 +9,8 @@ touch /var/cache/dictionaries-common/wordlist-dicts-list.hash
 # Ensure debconf doesn't ask questions
 echo "dictionaries-common dictionaries-common/default-ispell select none" | debconf-set-selections
 echo "dictionaries-common dictionaries-common/default-wordlist select none" | debconf-set-selections
+
+# Force reconfigure if already partially installed
+if dpkg -l dictionaries-common 2>/dev/null | grep -q '^ii'; then
+    dpkg --configure -a || true
+fi

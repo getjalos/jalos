@@ -3,10 +3,10 @@ firefox-esr
 thunderbird
 
 # Office & documents
-libreoffice-writer
-libreoffice-calc
-libreoffice-impress
-atril
+#libreoffice-writer
+#libreoffice-calc
+#libreoffice-impress
+#atril
 
 # Media
 vlc
