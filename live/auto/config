@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+VERSION=$(cat VERSION)
+
 lb config noauto \
     --distribution trixie \
     --archive-areas "main contrib non-free non-free-firmware" \
@@ -9,9 +11,9 @@ lb config noauto \
     --apt-recommends false \
     --binary-images iso-hybrid \
     --bootappend-live "boot=live components quiet splash" \
-    --iso-application "jalos" \
+    --iso-application "jalos ${VERSION}" \
     --iso-publisher "jalos Project" \
-    --iso-volume "jalos" \
+    --iso-volume "jalos-${VERSION}" \
     --bootloaders "grub-efi" \
-    --image-name "jalos" \
+    --image-name "jalos-${VERSION}" \
     "${@}"
