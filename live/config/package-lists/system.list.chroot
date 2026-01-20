@@ -9,7 +9,6 @@ firmware-atheros
 # System utilities
 htop
 btop
-neofetch
 bash-completion
 sudo
 curl
