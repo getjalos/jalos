@@ -1,12 +1,12 @@
 # Web & communication
 firefox-esr
-thunderbird
+#thunderbird
 
 # Office & documents
-libreoffice-writer
-libreoffice-calc
-libreoffice-impress
-atril
+#libreoffice-writer
+#libreoffice-calc
+#libreoffice-impress
+#atril
 
 # Media
 vlc
@@ -14,8 +14,8 @@ ristretto
 celluloid
 
 # Graphics
-gimp
-inkscape
+#gimp
+#inkscape
 
 # Utilities
 file-roller
