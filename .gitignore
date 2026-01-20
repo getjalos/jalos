@@ -18,6 +18,9 @@ live/config/source
 live/config/hooks/normal/[1-9]*.hook.chroot
 live/config/hooks/live/00*.hook.chroot
 live/config/package-lists/live.list.chroot
+live/binary.modified_timestamps
+live/chroot.packages.install
+live/chroot.packages.live
 *.log
 
 # Editor
