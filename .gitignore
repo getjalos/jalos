@@ -16,6 +16,7 @@ live/config/chroot
 live/config/common
 live/config/source
 live/config/hooks/normal/[1-9]*.hook.chroot
+live/config/hooks/live/00*.hook.chroot
 live/config/package-lists/live.list.chroot
 *.log
 
