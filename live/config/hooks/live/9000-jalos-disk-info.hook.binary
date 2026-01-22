@@ -1,0 +1,14 @@
+#!/bin/sh
+# Runs during binary stage to customize .disk/info
+
+set -e
+
+VERSION=$(cat VERSION 2>/dev/null || echo "26.01.00")
+BUILD_DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
+
+# Replace .disk/info with jalos branding
+cat > binary/.disk/info << EOF
+jalos ${VERSION} amd64 LIVE/INSTALL Binary - Built ${BUILD_DATE}
+EOF
+
+echo "Updated .disk/info with jalos branding"
