@@ -1,14 +1,44 @@
 #!/bin/sh
-# Runs during binary stage to customize .disk/info
+# Runs during binary stage to customize branding
 
 set -e
 
+echo "=== jalos branding hook ==="
+echo "Current directory: $(pwd)"
+echo "Listing config/bootloaders:"
+ls -la config/bootloaders/ 2>/dev/null || echo "config/bootloaders not found"
+
 VERSION=$(cat VERSION 2>/dev/null || echo "26.01.00")
 BUILD_DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
+
+# Create directory if it doesn't exist
+mkdir -p binary/.disk
 
 # Replace .disk/info with jalos branding
 cat > binary/.disk/info << EOF
 jalos ${VERSION} amd64 LIVE/INSTALL Binary - Built ${BUILD_DATE}
 EOF
 
-echo "Updated .disk/info with jalos branding"
+echo "Checking for splash images..."
+ls -la config/bootloaders/grub-pc/splash.png 2>/dev/null || echo "GRUB splash not found in config"
+ls -la config/bootloaders/syslinux/splash.png 2>/dev/null || echo "SYSLINUX splash not found in config"
+ls -la binary/boot/grub/splash.png 2>/dev/null || echo "Target GRUB splash not found"
+ls -la binary/isolinux/splash.png 2>/dev/null || echo "Target ISOLINUX splash not found"
+
+# Replace splash images if custom ones exist
+if [ -f config/bootloaders/grub-pc/splash.png ]; then
+    cp -v config/bootloaders/grub-pc/splash.png binary/boot/grub/splash.png
+    echo "Replaced GRUB splash.png"
+else
+    echo "GRUB splash source not found"
+fi
+
+if [ -f config/bootloaders/syslinux/splash.png ]; then
+    cp -v config/bootloaders/syslinux/splash.png binary/isolinux/splash.png
+    echo "Replaced ISOLINUX splash.png"
+else
+    echo "SYSLINUX splash source not found"
+fi
+
+echo "Updated .disk/info and splash images with jalos branding"
+echo "=== end jalos branding hook ==="
