@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+VERSION=$(cat /VERSION)
+
+cat > /etc/os-release << EOF
+PRETTY_NAME="jalos ${VERSION}"
+NAME="jalos"
+VERSION_ID="${VERSION}"
+VERSION="${VERSION} (Based on Debian Trixie)"
+VERSION_CODENAME=trixie
+ID=jalos
+ID_LIKE=debian
+HOME_URL="https://jalos.org"
+SUPPORT_URL="https://jalos.org"
+BUG_REPORT_URL="https://jalos.org"
+EOF
